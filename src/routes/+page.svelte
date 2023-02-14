@@ -10,6 +10,7 @@
 	import HorizontalBarChart from '$lib/charts/templates/HorizontalBarChart.svelte';
 	import LineChart from '$lib/charts/templates/LineChart.svelte';
 	import DoughnutChart from '$lib/charts/templates/DoughnutChart.svelte';
+	import ScatterChart from '$lib/charts/templates/ScatterChart.svelte';
 	import Table from '$lib/charts/templates/Table.svelte';
 
 	export let data: PageData;
@@ -70,6 +71,13 @@
 					<Chart title={'Doughnut Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
 						<div class="h-96" slot="figure">
 							<DoughnutChart chart_data={data.TIMESERIES} />
+						</div>
+					</Chart>
+				</div>
+				<div>
+					<Chart title={'Scatter Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+						<div class="h-96" slot="figure">
+							<ScatterChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>

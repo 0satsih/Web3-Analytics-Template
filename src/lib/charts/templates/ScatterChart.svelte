@@ -13,42 +13,36 @@
 				label: '1',
 				data: chart_data,
 				parsing: {
-					xAxisKey: 'DATE',
-					yAxisKey: 'SWAP_VOLUME_USD'
+					xAxisKey: 'SWAPPERS',
+					yAxisKey: 'SWAP_VOLUME'
 				},
-				borderColor: ['#F4A261'],
-				backgroundColor: ['#F4A261']
+				backgroundColor: '#264653' //, '#2A9D8F', '#E9C46A', '#F4A261', '#E76F51']
+			},
+			{
+				label: '2',
+				data: chart_data,
+				parsing: {
+					xAxisKey: 'SWAP_COUNT',
+					yAxisKey: 'SWAP_VOLUME'
+				},
+				backgroundColor: ['#2A9D8F'] //, '#2A9D8F', '#E9C46A', '#F4A261', '#E76F51']
 			}
 		]
 	};
 	onMount(() => {
 		const ctx = canvas.getContext('2d');
 		var chart = new Chart(ctx, {
-			type: 'line',
+			type: 'scatter',
 			data: data,
 			options: {
 				maintainAspectRatio: false,
 				responsive: true,
 				scales: {
 					x: {
-						type: 'time',
-						time: {
-							unit: 'day'
-						},
 						reverse: false,
-						border: {
-							display: true,
-							color: 'black',
-							width: 1
-						},
-						grid: {
-							display: false
-						}
-					},
-					y: {
 						title: {
 							display: true,
-							text: 'Price (USD)',
+							text: 'Amount',
 							font: {
 								size: 15,
 								family: "'Quicksand', 'sans-serif"
@@ -61,22 +55,34 @@
 							color: 'black',
 							width: 1
 						},
-						ticks: {
-							callback: function (value) {
-								return '$' + value;
-							}
+						grid: {
+							display: false
+						}
+					},
+					y: {
+						title: {
+							display: true,
+							text: 'Amount',
+							font: {
+								size: 15,
+								family: "'Quicksand', 'sans-serif"
+							},
+							color: 'black',
+							padding: 10
+						},
+						border: {
+							display: true,
+							color: 'black',
+							width: 1
 						}
 					}
 				},
 				elements: {
-					point: {
-						pointStyle: false
-					},
+					point: {},
 					line: {
 						fill: false
 					}
 				},
-
 				plugins: {
 					legend: {
 						display: true,
@@ -88,29 +94,6 @@
 						}
 					},
 					tooltip: {
-						callbacks: {
-							title: function (context) {
-								if (context[0].label.length == 26) {
-									return context[0].label.substring(0, 11);
-								} else {
-									return context[0].label.substring(0, 12);
-								}
-							},
-							label: function (context) {
-								let label = context.dataset.label || '';
-
-								if (label) {
-									label += ': ';
-								}
-								if (context.parsed.y !== null) {
-									label += new Intl.NumberFormat('en-US', {
-										style: 'currency',
-										currency: 'USD'
-									}).format(context.parsed.y);
-								}
-								return label;
-							}
-						},
 						padding: 10,
 						boxPadding: 3,
 						titleAlign: 'center',
@@ -127,4 +110,4 @@
 	});
 </script>
 
-<canvas bind:this={canvas} />
+<canvas bind:this={canvas} class="pr-8" />
