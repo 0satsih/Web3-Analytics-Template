@@ -40,42 +40,42 @@
 			</div>
 			<div class="row-start-4 col-start-3 col-span-5 grid grid-cols-1 gap-y-2">
 				<div>
-					<Chart title={'Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<BarChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>
 				<div>
-					<Chart title={'Horizontal Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Horizontal Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<HorizontalBarChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>
 				<div>
-					<Chart title={'Grouped Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Grouped Bar Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<GroupedBarChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>
 				<div>
-					<Chart title={'Line Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Line Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<LineChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>
 				<div>
-					<Chart title={'Doughnut Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Doughnut Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<DoughnutChart chart_data={data.TIMESERIES} />
 						</div>
 					</Chart>
 				</div>
 				<div>
-					<Chart title={'Scatter Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'}>
+					<Chart title={'Scatter Chart'} query_link={'https://next.flipsidecrypto.xyz/satsih'} description={''}>
 						<div class="h-96" slot="figure">
 							<ScatterChart chart_data={data.TIMESERIES} />
 						</div>
